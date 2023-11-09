@@ -46,7 +46,10 @@ const options = {
   start() {
     this.setIntervalId = setInterval(() => {
       const currentDate = new Date();
-      const selectedDate = flatpickr.parseDate(refs.inputEl.value);
+      const selectedDate = flatpickr.parseDate(
+        refs.inputEl.value,
+        'Y-m-d h:i K'
+      );
       const msDifference = selectedDate - currentDate;
 
       if (msDifference <= 0) {
